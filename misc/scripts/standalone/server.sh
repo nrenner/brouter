@@ -5,6 +5,7 @@
 
 # maxRunningTime is the request timeout in seconds, set to 0 to disable timeout
 JAVA_OPTS="-Xmx128M -Xms128M -Xmn8M -DmaxRunningTime=300"
-CLASSPATH=../brouter.jar
+BROUTER_PATH="$(dirname $0)/.."
+CLASSPATH="$BROUTER_PATH"/brouter.jar
 
-java $JAVA_OPTS -cp $CLASSPATH btools.server.RouteServer ../segments4 ../profiles2 ../customprofiles 17777 1
+java $JAVA_OPTS -cp "$CLASSPATH" btools.server.RouteServer "$BROUTER_PATH"/segments4 "$BROUTER_PATH"/profiles2 "$BROUTER_PATH"/customprofiles 17777 1
