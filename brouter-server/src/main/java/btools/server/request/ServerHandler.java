@@ -186,15 +186,14 @@ public class ServerHandler extends RequestHandler {
   @Override
   public String getFileName()
   {
-    String fileName = null;
     String format = params.get( "format" );
 
     if ( format != null )
     {
-      fileName = "brouter." + format;
+      return (params.get( "trackname" ) || "brouter") + "." + format;
     }
 
-    return fileName;
+    return null;
   }
 
   private static OsmNodeNamed readPosition( String vlon, String vlat, String name )
