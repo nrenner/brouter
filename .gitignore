@@ -7,3 +7,6 @@ target/
 *.class
 .idea/
 *.iml
+
+.idea/*
+!/.idea/runConfigurations
